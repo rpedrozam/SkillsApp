@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ionicskilsapp": {
+      "hosting": {
+        "app": [
+          "ionicskilsapp"
+        ]
+      }
+    }
+  }
+}
