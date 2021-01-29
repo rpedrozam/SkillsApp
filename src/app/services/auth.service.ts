@@ -38,6 +38,7 @@ export class AuthService {
   async register(email: string, password: string): Promise<User> {
     try {
       const { user } = await this.afAuth.createUserWithEmailAndPassword(email, password);
+      this.updateUserData(user);
       return user;
     } catch (error) {
       console.log('Error:', error);
@@ -70,27 +71,8 @@ export class AuthService {
       displayName: user.displayName,
     }
 
-    return userReference.set(data, {merge: true});
+    return userReference.set(data, { merge: true });
 
-  }
-
-  //Borrar
-  async loginGoogle(): Promise<User> {
-    try {
-      const { user } = await this.afAuth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
-      this.updateUserData(user);
-      return user;
-    } catch (error) {
-      console.log('Error:', error);
-    }
-  }
-
-  async sendVerificationEmail(): Promise<void>{
-    try {
-      return (await this.afAuth.currentUser).sendEmailVerification();
-    } catch (error) {
-      console.log('Error:', error);
-    }
   }
 
 }

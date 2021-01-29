@@ -7,6 +7,7 @@ export const environment = {
   firebaseConfig: {
     apiKey: "AIzaSyAd_9bgqTTLtFghonH9ULnPHx9-UbiNib0",
     authDomain: "ionicskilsapp.firebaseapp.com",
+    databaseURL: "https://ionicskilsapp-default-rtdb.firebaseio.com",
     projectId: "ionicskilsapp",
     storageBucket: "ionicskilsapp.appspot.com",
     messagingSenderId: "1007365173059",

@@ -16,9 +16,15 @@
       <ion-input type="password" #password required></ion-input>
     </ion-item>
 
+    <ion-item lines = full>
+      <ion-label position="floating">Confirm Password</ion-label>
+      <ion-input type="password" #confirm_password required></ion-input>
+    </ion-item>
+
+
     <ion-row>
       <ion-col>
-        <ion-button type = "submit" (click)="onRegister(email, password)" expand="block">
+        <ion-button type = "submit" (click)="onRegister(email, password, confirm_password)" expand="block">
           Register
         </ion-button>
       </ion-col>

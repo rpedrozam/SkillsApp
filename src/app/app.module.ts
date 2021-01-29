@@ -16,9 +16,10 @@ import {  environment } from './../environments/environment';
   declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(),
+    AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireAuthModule,
-    AppRoutingModule],
+    AngularFireAuthModule
+    ],
   providers: [
     StatusBar,
     SplashScreen,
