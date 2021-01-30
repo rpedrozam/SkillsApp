@@ -1,9 +1,13 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>camera</ion-title>
+    <ion-title>Camera</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content padding>
+    <ion-button (click)="takePicture()" expand="block">Take a picture</ion-button>
+    <img *ngIf="image" [src]="image" alt="image">
+    <ion-text *ngIf="image == null" color="primary" class="ion-text-center">
+      <h1>No picture taken</h1>
+    </ion-text>
 </ion-content>

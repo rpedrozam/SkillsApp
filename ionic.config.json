@@ -1,5 +1,7 @@
 {
   "name": "SkillsApp",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

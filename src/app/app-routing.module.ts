@@ -6,7 +6,7 @@ const routes: Routes = [
 
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
@@ -20,7 +20,7 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./pages/tabs/tabs.module').then( m => m.TabsPageModule),
-    //canActivate: [AuthGuard]
+    canActivate: [AuthGuard]
   },
 ];
 

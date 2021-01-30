@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from "../../services/data.service";
 
 @Component({
   selector: 'app-list',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListPage implements OnInit {
 
-  constructor() { }
+  posts: any[] = [];
+
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
+    this.dataService.getJsonData()
+    .subscribe(
+      (data: any) => {
+        this.posts = data;
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 
 }
